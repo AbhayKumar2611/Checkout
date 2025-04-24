@@ -1,4 +1,5 @@
 # Checkout 💪
+Welcome to **Checkout**, 
 
 ## Demo Links 🚀
 - Live Demo: [Watch Live](https://checkout-ashy.vercel.app/)
@@ -33,7 +34,16 @@
 ### Estimated Timeline and Items Section
 ![Screenshot 2025-04-24 211328](https://github.com/user-attachments/assets/fc662533-c7a9-4aff-b43f-3a69e3da6a69)
 
+### Recommended Products Section
+![Screenshot 2025-04-24 211339](https://github.com/user-attachments/assets/844620f4-2fc9-4d75-bd19-1d8ea05bc573)
+![Screenshot 2025-04-24 211354](https://github.com/user-attachments/assets/1189e710-6ecf-412e-9222-6201d7a4b4c2)
 
-## Expanding the ESLint configuration
+### Delivery Details and Promo Code Section
+![Screenshot 2025-04-24 211404](https://github.com/user-attachments/assets/82e791e1-3e2d-4b15-b06f-3f9ee958ccad)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Order Summary Section
+![Screenshot 2025-04-24 211413](https://github.com/user-attachments/assets/d899daaf-950b-403a-8bf5-0230eaffd026)
+
+### Order Confirmed Section
+![Screenshot 2025-04-24 211423](https://github.com/user-attachments/assets/0be67ace-961b-4bad-8005-d261969d093a)
+
