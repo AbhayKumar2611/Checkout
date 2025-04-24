@@ -1,5 +1,5 @@
 # Checkout 💪
-Welcome to **Checkout**, 
+Welcome to **Checkout**, a comprehensive checkout summary application built with HTML, Tailwind CSS, React!. It helps users to add or remove products from Items Section. User can also add products from Recommended Products Section. User can also apply promo code and based on promo code discount is applied on Subtotal. At last user will click on Place Order button and he will be redirected to Order Confirmed Section. Order Confirmed Section will also show the status of Orders.
 
 ## Demo Links 🚀
 - Live Demo: [Watch Live](https://checkout-ashy.vercel.app/)
