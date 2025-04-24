@@ -11,25 +11,43 @@ import {
   Tag,
   Truck,
 } from "lucide-react";
+import CartItems from "./CartItems";
 
 function App() {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
   const [promoError, setPromoError] = useState(false);
-
-  // static data
-  // Mock data
-  const items = [
+  const [items, setItems] = useState([
     { id: 1, name: "Wireless Headphones", price: 79.99, quantity: 1 },
     { id: 2, name: "Smart Watch", price: 129.99, quantity: 1 },
     { id: 3, name: "Portable Power Bank", price: 34.99, quantity: 2 },
-  ];
+  ]);
 
   const deliveryAddress = "123 Main Street, Apt 4B, New York, NY 10001";
   const deliveryFee = 5.99;
   const estimatedDelivery = "Apr 27 - Apr 29";
   const promoDiscount = promoApplied ? 15 : 0;
+
+  const handleIncrease = (id) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const handleDecrease = (id) => {
+    setItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantity: Math.max(0, item.quantity - 1) }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
 
   const subtotal = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -218,39 +236,12 @@ function App() {
           </div>
         </div>
 
-        {/* Items Purchased */}
-        <div className="bg-white rounded-lg shadow-md p-4 mb-4 ">
-          <div className="flex items-center mb-4">
-            <ShoppingBag className="h-5 w-5 text-gray-500 mr-2" />
-            <h2 className="text-lg font-medium">Your Items</h2>
-          </div>
-
-          <div className="space-y-4">
-            {items.map((item) => {
-              return (
-                <div
-                  key={item.id}
-                  className="flex justify-between items-center"
-                >
-                  <div className="flex-1">
-                    <p className="font-medium">{item.name}</p>
-                    <p className="text-sm text-gray-500">
-                      Qty: {item.quantity}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-medium">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      ${item.price.toFixed(2)} each
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        {/* Items Component - Now passing the state and handlers */}
+        <CartItems
+          items={items}
+          onIncrease={handleIncrease}
+          onDecrease={handleDecrease}
+        />
 
         {/* Delivery section */}
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
